@@ -561,6 +561,7 @@ static int charging_mode_booting(void) {
 
     close(f);
     return ('8' == cmb);
+
 #endif
 }
 

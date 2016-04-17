@@ -1,0 +1,10 @@
+diff a/init/init.cpp b/init/init.cpp	(rejected hunks)
+@@ -560,7 +560,7 @@ static int charging_mode_booting(void) {
+     }
+ 
+     close(f);
+-    return ('1' == cmb);
++    return ('8' == cmb);
+ #endif
+ }
+ 
