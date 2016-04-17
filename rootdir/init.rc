@@ -668,12 +668,12 @@ service surfaceflinger /system/bin/surfaceflinger
 service drm /system/bin/drmserver
     class main
     user drm
-    group drm system inet drmrpc
+    group drm system inet drmrpc sdcard_r
 
 service media /system/bin/mediaserver
     class main
     user root
-    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm qcom_diag
+    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm qcom_diag media sdcard_r system net_bt_stack
     ioprio rt 4
 
 service console /system/bin/sh
