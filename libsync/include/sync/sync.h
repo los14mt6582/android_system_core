@@ -29,7 +29,7 @@ struct sync_fence_info_data {
  uint32_t len;
  char name[32];
  int32_t status;
- uint8_t pt_info[];
+ uint8_t pt_info[0];
 };
 
 struct sync_pt_info {
@@ -38,7 +38,7 @@ struct sync_pt_info {
  char driver_name[32];
  int32_t status;
  uint64_t timestamp_ns;
- uint8_t driver_data[];
+ uint8_t driver_data[0];
 };
 
 /* timeout in msecs */
