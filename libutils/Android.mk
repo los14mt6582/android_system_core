@@ -74,6 +74,10 @@ LOCAL_CFLAGS += -DALIGN_DOUBLE
 endif
 LOCAL_CFLAGS += -Werror -fvisibility=protected
 
+ifeq ($(BOARD_HAS_MTK_HARDWARE),true)  
+LOCAL_SRC_FILES += MediatekHacks.cpp  
+endif
+
 LOCAL_STATIC_LIBRARIES := \
 	libcutils \
 	libc
