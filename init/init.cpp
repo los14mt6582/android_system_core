@@ -366,7 +366,11 @@ static void export_kernel_boot_props() {
         { "ro.boot.mode",       "ro.bootmode",   "unknown", },
         { "ro.boot.baseband",   "ro.baseband",   "unknown", },
         { "ro.boot.bootloader", "ro.bootloader", "unknown", },
+#ifndef old_kernel
         { "ro.boot.hardware",   "ro.hardware",   "unknown", },
+#else
+        { "ro.boot.hardware",   "ro.hardware",   old_kernel, },
+#endif
 #ifndef IGNORE_RO_BOOT_REVISION
         { "ro.boot.revision",   "ro.revision",   "0", },
 #endif
@@ -440,6 +444,7 @@ static void selinux_init_all_handles(void)
     sehandle_prop = selinux_android_prop_context_handle();
 }
 
+#if 0
 enum selinux_enforcing_status { SELINUX_PERMISSIVE, SELINUX_ENFORCING };
 
 static selinux_enforcing_status selinux_status_from_cmdline() {
@@ -453,11 +458,12 @@ static selinux_enforcing_status selinux_status_from_cmdline() {
 
     return status;
 }
+#endif
 
 static bool selinux_is_enforcing(void)
 {
     if (ALLOW_PERMISSIVE_SELINUX) {
-        return selinux_status_from_cmdline() == SELINUX_ENFORCING;
+        return false;
     }
     return true;
 }
@@ -553,7 +559,7 @@ static int charging_mode_booting(void) {
     }
 
     close(f);
-    return ('1' == cmb);
+    return ('8' == cmb);
 #endif
 }
 
