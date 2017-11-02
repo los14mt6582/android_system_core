@@ -366,12 +366,7 @@ static void export_kernel_boot_props() {
         { "ro.boot.mode",       "ro.bootmode",   "unknown", },
         { "ro.boot.baseband",   "ro.baseband",   "unknown", },
         { "ro.boot.bootloader", "ro.bootloader", "unknown", },
-#ifdef MTK_MT6582     
-        { "ro.boot.hardware",   "ro.hardware",   "mt6582", },
-#endif
-#ifdef MTK_MT6592     
-        { "ro.boot.hardware",   "ro.hardware",   "mt6592", },
-#endif  
+        { "ro.boot.hardware",   "ro.hardware",   "sprout", }, 
 #ifndef IGNORE_RO_BOOT_REVISION
         { "ro.boot.revision",   "ro.revision",   "0", },
 #endif
